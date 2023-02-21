@@ -8,6 +8,7 @@ ml5 Example
 BodyPix
 === */
 
+let canvas;
 let bodypix;
 let video;
 let segmentation;
@@ -26,17 +27,19 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(320, 240);
+  canvas = createCanvas(320*2, 240*2);
+  canvas.position(350,300);
   background(0);
   button = createButton("click!")
-  button.position(0, 0);
+  button.position(800, 250);
   button.mousePressed(Snap);
   buttonClear = createButton("clear the canvas")
-  buttonClear.position(50, 0);
+  buttonClear.position(850, 250);
   buttonClear.mousePressed(Clear);
   // load up your video
   video = createCapture(VIDEO, videoReady);
-  video.size(width, height);
+  video.size(width/3, height/3);
+  video.position(350,100);
   
 }
 
